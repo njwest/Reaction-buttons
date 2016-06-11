@@ -4,21 +4,9 @@ $('#addReaction').on('click', function(){
   reactionArray.push(reactionInput.value);
   renderButtons();
   giphyClick();
+  clickAnimate();
   return false;
 });
-
-  $('.clicky').on('click', function(){
-    var state = $(this).attr('data-state');
-    
-    if (state === 'still'){
-      $(this).attr('src', $(this).data('animate'));
-      $(this).attr('data-state', 'animate');
-    }else{
-      $(this).attr('src', $(this).data('still'));
-      $(this).attr('data-state', 'still');
-    }
-  });
-
 
 var reactionArray = ["surprised", "excited", "sad", "scared", "mad", "winning", "lolwut", "omg", "disappointed", "crying", "weird", "yelling", "wtf", "wat", "laugh", "giggle", "chortle", "disgust"];
 
@@ -63,8 +51,25 @@ function giphyClick(){
   });
 };
 
+function clickAnimate(){
+  $('.clicky').on('click', function(){
+    var state = $(this).attr('data-state');
+    
+    if (state === 'still'){
+      $(this).attr('src', $(this).data('animate'));
+      $(this).attr('data-state', 'animate');
+    }else{
+      $(this).attr('src', $(this).data('still'));
+      $(this).attr('data-state', 'still');
+    }
+  });
+};
+
+
+
 renderButtons();
 giphyClick();
+clickAnimate();
 
 
 

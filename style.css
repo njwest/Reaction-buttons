@@ -13,6 +13,10 @@ img{
   padding: 1px;
 }
 
+input{
+  color: #000;
+}
+
 .item{
   display: inline-block
 }
