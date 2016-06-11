@@ -7,18 +7,22 @@
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
+<div class="container">
+  <div id="siteTitle"><h1>Reaction Generator</h1></div>
 
   <div id="buttons"></div>
 
-  <form id="buttonForm">
-    <label for="reactionInput">Add a reaction!</label>
-    <input type="text" id="reactionInput"><br>
-    <input id="addReaction" type="submit" value="Submit">
-  </form>
+  <div class="row">
 
-  <div id="reactions"></div>
-  
-
+    <div class="col-md-9" id="reactions"></div>
+    
+    <form class="col-md-3" id="buttonForm">
+      <label for="reactionInput">Add a reaction!</label>
+      <input type="text" id="reactionInput"><br>
+      <input id="addReaction" type="submit" value="Submit">
+    </form>
+</div>
+  </div>
 
 <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
 <script src="giphy-buttons.js" type="text/javascript"></script>

@@ -1,7 +1,26 @@
-.item{
-  display: inline-block
+body{
+  background: #9c9f84;
+  background: -webkit-linear-gradient(left top, #9c9f84, black); 
+  color: #fff;
 }
+
+button{
+  color: #000;
+  margin: 0px 5px 5px 5px;
+}   
 
 img{
   padding: 1px;
+}
+
+.item{
+  display: inline-block
+}
+    
+#siteTitle{ 
+  text-align: center;
+}
+
+#addReaction{
+  color: #000;
 }
