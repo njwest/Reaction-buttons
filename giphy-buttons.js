@@ -1,12 +1,4 @@
-window.onload = function(){
-
-$('#addReaction').on('click', function(){
-  reactionArray.push(reactionInput.value);
-  renderButtons();
-  giphyClick();
-  clickAnimate();
-  return false;
-});
+$(document).ready(function(){
 
 var reactionArray = ["surprised", "excited", "sad", "scared", "mad", "winning", "lolwut", "omg", "disappointed", "crying", "weird", "yelling", "wtf", "wat", "laugh", "giggle", "chortle", "disgust"];
 
@@ -14,9 +6,12 @@ function renderButtons(){
   $('#buttons').empty();
 
   for (var i = 0; i < reactionArray.length; i++){
-    $('#buttons').append('<button class="giphy" data-state="still" data-reaction="' + reactionArray[i] + '">' + reactionArray[i] + '</button');
+    $('#buttons').append('<button class="giphy hvr-shutter-in-horizontal" data-state="still" data-reaction="' + reactionArray[i] + '">' + reactionArray[i] + '</button');
   }
 };
+
+
+
 
 function giphyClick(){
   $('.giphy').on('click', function(){
@@ -37,11 +32,12 @@ function giphyClick(){
         var p = $('<p>').text("Rating: " + rating);
 
         var reactionImage = $('<img>');
-        reactionImage.attr('class', 'clicky');
-        reactionImage.attr('data-state', 'still');
         reactionImage.attr('src', results[i].images.fixed_height.url);
+        reactionImage.attr('data-state', 'still');
         reactionImage.attr('data-still', results[i].images.fixed_height_still.url);
         reactionImage.attr('data-animate', results[i].images.fixed_height.url);
+        reactionImage.attr('class', 'clicky');
+
 
         gifDiv.append(p);
         gifDiv.append(reactionImage);
@@ -51,7 +47,15 @@ function giphyClick(){
   });
 };
 
-function clickAnimate(){
+$('#addReaction').on('click', function(){
+  reactionArray.push(reactionInput.value);
+  renderButtons();
+  giphyClick();
+  return false;
+});
+
+
+
   $('.clicky').on('click', function(){
     var state = $(this).attr('data-state');
     
@@ -63,14 +67,10 @@ function clickAnimate(){
       $(this).attr('data-state', 'still');
     }
   });
-};
-
-
 
 renderButtons();
 giphyClick();
-clickAnimate();
 
 
 
-};
+});

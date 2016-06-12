@@ -1,12 +1,16 @@
 body{
   background: #9c9f84;
   background: -webkit-linear-gradient(left top, #9c9f84, black); 
+  background-image: url("congruent_outline.png");
   color: #fff;
 }
 
 button{
+  background-color: #d21034;
+  border: none;
   color: #000;
   margin: 0px 5px 5px 5px;
+
 }   
 
 img{
